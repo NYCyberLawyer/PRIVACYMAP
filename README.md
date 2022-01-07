@@ -1,2 +1,2 @@
 # PRIVACYMAP
-Privacy Mapping Open Source Software
+Privacy Mapping Software
