@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    max-height: 100%;
+    margin: 0;
+}
+
+body{
+    max-height: 100%;
+    background: #F2F2F2;
+    font-family: Roboto, serif;
+    margin: 0;
+}

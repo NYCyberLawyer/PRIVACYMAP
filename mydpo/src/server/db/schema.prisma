@@ -1,0 +1,138 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String          @id @default(cuid())
+  createdAt         DateTime        @default(now())
+  modifiedAt        DateTime        @default(now())
+  email             String          @unique
+  consultancyFirm   ConsultancyFirm @relation(fields: [consultancyFirmId], references: [id])
+  name              String
+  consultancyFirmId String
+}
+
+model Token {
+    id                String          @id @default(cuid())
+      createdAt         DateTime        @default(now())
+      token String @unique
+      isUsed Boolean @default(false)
+}
+
+model ConsultancyFirm {
+  id         String     @id @default(cuid())
+  createdAt  DateTime   @default(now())
+  modifiedAt DateTime   @default(now())
+  users      User[]
+  name       String
+  slug       String     @unique
+  businesses Business[]
+}
+
+model Business {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @default(now())
+
+  companyName    String
+  companyAddress String
+  companyPhone   String
+  companyEmail   String
+
+  businessContactName     String
+  businessContactPosition String
+  businessContactPhone    String
+  businessContactEmail    String
+
+  technicalContactName     String
+  technicalContactPosition String
+  technicalContactPhone    String
+  technicalContactEmail    String
+
+  privacyLiaisonContactName     String
+  privacyLiaisonContactPosition String
+  privacyLiaisonContactPhone    String
+  privacyLiaisonContactEmail    String
+
+  hrContactName     String
+  hrContactPosition String
+  hrContactPhone    String
+  hrContactEmail    String
+
+  ConsultancyFirm   ConsultancyFirm? @relation(fields: [consultancyFirmId], references: [id])
+  consultancyFirmId String?
+
+  applications Application[]
+}
+
+model Application {
+  id                           String   @id @default(cuid())
+  createdAt                    DateTime @default(now())
+  modifiedAt                   DateTime @default(now())
+  applicationName              String
+  applicableRegulations        String[]
+  description                  String
+  applicationHostingType       String
+  applicationHostingManagement String
+  applicationHostingEntity     String
+  applicationOwner             String
+  technologyOwner              String
+  applicationRegionStored      String
+  hasDRHosting                 Boolean
+  applicationDRRegionStored    String
+  modules                      String[]
+  applicationType              String
+  businessId                   String
+
+  hasNameAndInitials                        Boolean
+  hasIdNumbers                              Boolean
+  hasBirthdate                              Boolean
+  hasAge                                    Boolean
+  hasGender                                 Boolean
+  hasHomeAddress                            Boolean
+  hasTelephoneNumber                        Boolean
+  hasMobileNumber                           Boolean
+  hasEmailAddress                           Boolean
+  hasDriversLicenceNumber                   Boolean
+  hasMedicalInfo                            Boolean
+  hasFinancialInfo                          Boolean
+  hasHealthInfo                             Boolean
+  hasStudentInfo                            Boolean
+  hasMinorInfo                              Boolean
+  hasMaritalStatus                          Boolean
+  hasNationality                            Boolean
+  hasSexualBehaviour                        Boolean
+  hasPhysicalCharacteristics                Boolean
+  hasEthnicOrigin                           Boolean
+  hasReligiousPhilosophicalPoliticalBeliefs Boolean
+  hasTradeUnionMembership                   Boolean
+  hasBiometricData                          Boolean
+  hasHouseholdInfo                          Boolean
+  hasBillingHistory                         Boolean
+  hasUniqueDeviceId                         Boolean
+  hasLocation                               Boolean
+  hasCriminalInfo                           Boolean
+  hasCivilJusticeInfo                       Boolean
+  hasSocialMedia                            Boolean
+
+  connectionType        String
+  encryptedDataTransfer Boolean
+  dataRetentionReq      String
+  comments              String
+  linkedApps            String[]
+  Business              Business @relation(fields: [businessId], references: [id])
+}
+
+model Module {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @default(now())
+  name       String
+  //  Application   Application? @relation(fields: [applicationId], references: [id])
+  //  applicationId String?
+}

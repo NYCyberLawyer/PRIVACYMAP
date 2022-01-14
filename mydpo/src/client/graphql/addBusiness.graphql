@@ -1,0 +1,70 @@
+mutation addBusiness(
+$companyName: String!,
+$companyAddress: String!,
+$companyPhone: String!,
+$companyEmail: String!,
+$businessContactName: String!,
+$businessContactPosition: String!,
+$businessContactPhone: String!,
+$businessContactEmail: String!,
+$technicalContactName: String!,
+$technicalContactPosition: String!,
+$technicalContactPhone: String!,
+$technicalContactEmail: String!
+$privacyLiaisonContactName: String!,
+$privacyLiaisonContactPosition: String!,
+$privacyLiaisonContactPhone: String!,
+$privacyLiaisonContactEmail: String!
+$hrContactName: String!,
+$hrContactPosition: String!,
+$hrContactPhone: String!,
+$hrContactEmail: String!
+) {
+  addBusiness(
+  companyName: $companyName,
+  companyAddress: $companyAddress,
+  companyPhone: $companyPhone,
+  companyEmail: $companyEmail,
+
+  businessContactName: $businessContactName,
+  businessContactPosition: $businessContactPosition,
+  businessContactPhone: $businessContactPhone,
+  businessContactEmail: $businessContactEmail,
+
+  technicalContactName: $technicalContactName,
+  technicalContactPosition: $technicalContactPosition,
+  technicalContactPhone: $technicalContactPhone,
+  technicalContactEmail: $technicalContactEmail,
+
+  privacyLiaisonContactName: $privacyLiaisonContactName,
+  privacyLiaisonContactPosition: $privacyLiaisonContactPosition,
+  privacyLiaisonContactPhone: $privacyLiaisonContactPhone,
+  privacyLiaisonContactEmail: $privacyLiaisonContactEmail,
+
+  hrContactName: $hrContactName,
+  hrContactPosition: $hrContactPosition,
+  hrContactPhone: $hrContactPhone,
+  hrContactEmail: $hrContactEmail,
+  ) {
+    companyName,
+    companyAddress,
+    companyPhone,
+    companyEmail,
+    businessContactName,
+    businessContactPosition,
+    businessContactPhone,
+    businessContactEmail,
+    technicalContactName,
+    technicalContactPosition,
+    technicalContactPhone,
+    technicalContactEmail,
+    privacyLiaisonContactName,
+    privacyLiaisonContactPosition,
+    privacyLiaisonContactPhone,
+    privacyLiaisonContactEmail,
+    hrContactName,
+    hrContactPosition,
+    hrContactPhone,
+    hrContactEmail
+  }
+}

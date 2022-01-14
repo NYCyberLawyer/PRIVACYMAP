@@ -1,0 +1,16 @@
+version: "3"
+services:
+  # Postgres
+  postgres:
+    image: postgres:latest
+    ports:
+      # Accessible from the host at port :35432
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: postgres 
+      POSTGRES_DB: mydpo
+    # Make sure log colors show up correctly
+    tty: true
+    volumes:
+      - ./database:/var/lib/postgresql/data

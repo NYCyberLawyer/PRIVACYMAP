@@ -1,0 +1,12 @@
+query GetConsultancyFirm($id: String, $slug: String) {
+  consultancyFirm(id: $id, slug: $slug) {
+    id
+    name
+    slug
+    users {
+      id
+      name
+      email
+    }
+  }
+}

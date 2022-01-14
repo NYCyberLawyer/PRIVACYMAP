@@ -1,0 +1,128 @@
+{
+  "name": "mydpo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "predev": "yarn run generate",
+    "dev": "next dev",
+    "prebuild": "yarn run generate",
+    "build": "next build",
+    "start": "next start",
+    "start:ci": "INSECURE_AUTH=true yarn run start",
+    "eslint": "eslint --cache --cache-location=node_modules/.cache/.eslintcache --fix",
+    "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx",
+    "generate": "yarn run generate:prisma && yarn run generate:nexus && yarn run generate:graphql-codegen",
+    "generate:prisma": "prisma generate",
+    "generate:nexus": "cross-env GENERATE=true cross-env DOTENV_CONFIG_PATH=.env.example ts-node --require dotenv/config --transpile-only -P nexus.tsconfig.json src/server/graphql/schema.ts",
+    "generate:graphql-codegen": "graphql-codegen",
+    "prisma:migrate": "yarn prisma migrate dev --preview-feature",
+    "prisma:deploy": "yarn prisma migrate deploy",
+    "test": "jest",
+    "typecheck": "concurrently --raw yarn:typecheck:*",
+    "typecheck:app": "tsc --noEmit",
+    "typecheck:cypress": "tsc --noEmit -p cypress/tsconfig.json",
+    "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.1.0",
+    "@prisma/client": "2.30.3",
+    "@types/file-saver": "^2.0.4",
+    "@types/mermaid": "^8.2.7",
+    "@urql/exchange-graphcache": "^4.0.0",
+    "apollo-server-micro": "^2.21.2",
+    "cookie-session": "^1.4.0",
+    "cuid": "^2.1.8",
+    "dotenv": "^8.2.0",
+    "execa": "^5.0.0",
+    "file-saver": "^2.0.5",
+    "formik": "^2.2.9",
+    "formik-mui": "^4.0.0-alpha.3",
+    "graphql": "^15.5.0",
+    "jimp": "^0.16.1",
+    "mermaid": "^8.13.6",
+    "next": "10.0.9",
+    "next-connect": "^0.10.0",
+    "nexus": "^1.0.0",
+    "nexus-plugin-prisma": "^0.32.0",
+    "passport": "^0.4.1",
+    "passport-magic-login": "1.0.7",
+    "postmark": "^2.7.3",
+    "raw-body": "^2.4.1",
+    "react": "17.0.1",
+    "react-confirm-alert": "^2.7.0",
+    "react-dom": "17.0.1",
+    "react-hot-toast": "^1.0.2",
+    "react-icons": "^4.3.1",
+    "slug": "^4.0.3",
+    "stripe": "^8.138.0",
+    "urql": "^2.0.1",
+    "xlsx": "^0.17.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-typescript": "^7.13.0",
+    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/near-operation-file-preset": "^1.17.13",
+    "@graphql-codegen/plugin-helpers": "^1.18.4",
+    "@graphql-codegen/typed-document-node": "^1.18.4",
+    "@graphql-codegen/typescript": "^1.21.1",
+    "@graphql-codegen/typescript-operations": "1.17.15",
+    "@graphql-codegen/typescript-urql": "^2.0.5",
+    "@stripe/stripe-js": "^1.13.1",
+    "@types/common-tags": "^1.8.0",
+    "@types/cookie-session": "^2.0.42",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/passport": "^1.0.6",
+    "@types/react": "^17.0.3",
+    "@types/slug": "^0.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "common-tags": "1.8.0",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^6.8.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": ">=4",
+    "jest": "^26.6.3",
+    "lint-staged": ">=10",
+    "next-prisma-plugin": "^0.1.1",
+    "prettier": "^2.2.1",
+    "prisma": "^2.19.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "exports": {
+    "./": "./*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ],
+    "setupFilesAfterEnv": [
+      "./src/test/jest-setup.ts"
+    ],
+    "transform": {
+      "\\.tsx?$": [
+        "babel-jest",
+        {
+          "configFile": "./.babelrc.jest.js"
+        }
+      ]
+    }
+  },
+  "prisma": {
+    "schema": "src/server/db/schema.prisma"
+  }
+}

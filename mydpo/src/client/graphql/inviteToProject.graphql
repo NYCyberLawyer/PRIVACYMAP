@@ -1,0 +1,3 @@
+mutation InviteToConsultancyFirm($email: String!, $projectId: String!) {
+  inviteToConsultancyFirm(email: $email, projectId: $projectId)
+}

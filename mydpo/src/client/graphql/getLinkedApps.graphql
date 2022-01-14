@@ -1,0 +1,6 @@
+query GetLinkedAppsById($id: String!) {
+    linkedApps(id: $id) {
+        id,
+        applicationName,
+    }
+}

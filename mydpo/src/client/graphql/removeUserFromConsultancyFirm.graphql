@@ -1,0 +1,12 @@
+mutation RemoveUserFromConsultancyFirm($userId: String!, $consultancyFirmId: String!) {
+  removeUserFromConsultancyFirm(userId: $userId, consultancyFirmId: $consultancyFirmId) {
+    id
+    name
+    slug
+    users {
+      id
+      name
+      email
+    }
+  }
+}

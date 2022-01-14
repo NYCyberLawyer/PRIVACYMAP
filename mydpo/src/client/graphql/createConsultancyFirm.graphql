@@ -1,0 +1,7 @@
+mutation CreateConsultancyFirm($name: String!) {
+  createConsultancyFirm(name: $name) {
+    id
+    name
+    slug
+  }
+}

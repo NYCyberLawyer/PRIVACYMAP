@@ -1,0 +1,127 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Application {
+  id                                        String   @id
+  createdAt                                 DateTime @default(now())
+  modifiedAt                                DateTime @default(now())
+  businessId                                String
+  applicableRegulations                     String[]
+  applicationDRRegionStored                 String
+  applicationHostingEntity                  String
+  applicationHostingManagement              String
+  applicationHostingType                    String
+  applicationName                           String
+  applicationOwner                          String
+  applicationRegionStored                   String
+  applicationType                           String
+  comments                                  String
+  connectionType                            String
+  dataRetentionReq                          String
+  description                               String
+  encryptedDataTransfer                     Boolean
+  hasDRHosting                              Boolean
+  hasNameAndInitials                        Boolean
+  technologyOwner                           String
+  hasAge                                    Boolean
+  hasBillingHistory                         Boolean
+  hasBiometricData                          Boolean
+  hasBirthdate                              Boolean
+  hasCivilJusticeInfo                       Boolean
+  hasCriminalInfo                           Boolean
+  hasDriversLicenceNumber                   Boolean
+  hasEmailAddress                           Boolean
+  hasEthnicOrigin                           Boolean
+  hasFinancialInfo                          Boolean
+  hasGender                                 Boolean
+  hasHealthInfo                             Boolean
+  hasHomeAddress                            Boolean
+  hasHouseholdInfo                          Boolean
+  hasIdNumbers                              Boolean
+  hasLocation                               Boolean
+  hasMaritalStatus                          Boolean
+  hasMedicalInfo                            Boolean
+  hasMinorInfo                              Boolean
+  hasMobileNumber                           Boolean
+  hasNationality                            Boolean
+  hasPhysicalCharacteristics                Boolean
+  hasReligiousPhilosophicalPoliticalBeliefs Boolean
+  hasSexualBehaviour                        Boolean
+  hasSocialMedia                            Boolean
+  hasStudentInfo                            Boolean
+  hasTelephoneNumber                        Boolean
+  hasTradeUnionMembership                   Boolean
+  hasUniqueDeviceId                         Boolean
+  modules                                   String[]
+  linkedApps                                String[]
+  Business                                  Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+}
+
+model Business {
+  id                            String           @id
+  createdAt                     DateTime         @default(now())
+  modifiedAt                    DateTime         @default(now())
+  consultancyFirmId             String?
+  businessContactEmail          String
+  businessContactName           String
+  businessContactPhone          String
+  businessContactPosition       String
+  companyAddress                String
+  companyEmail                  String
+  companyName                   String
+  companyPhone                  String
+  technicalContactEmail         String
+  technicalContactName          String
+  technicalContactPhone         String
+  technicalContactPosition      String
+  privacyLiaisonContactEmail    String
+  privacyLiaisonContactName     String
+  privacyLiaisonContactPhone    String
+  privacyLiaisonContactPosition String
+  hrContactEmail                String
+  hrContactName                 String
+  hrContactPhone                String
+  hrContactPosition             String
+  ConsultancyFirm               ConsultancyFirm? @relation(fields: [consultancyFirmId], references: [id])
+  Application                   Application[]
+}
+
+model ConsultancyFirm {
+  id         String     @id
+  createdAt  DateTime   @default(now())
+  modifiedAt DateTime   @default(now())
+  name       String
+  slug       String     @unique(map: "ConsultancyFirm.slug_unique")
+  Business   Business[]
+  User       User[]
+}
+
+model Module {
+  id         String   @id
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @default(now())
+  name       String
+}
+
+model Token {
+  id        String   @id
+  createdAt DateTime @default(now())
+  token     String   @unique(map: "Token.token_unique")
+  isUsed    Boolean  @default(false)
+}
+
+model User {
+  id                String          @id
+  createdAt         DateTime        @default(now())
+  modifiedAt        DateTime        @default(now())
+  email             String          @unique(map: "User.email_unique")
+  name              String
+  consultancyFirmId String
+  ConsultancyFirm   ConsultancyFirm @relation(fields: [consultancyFirmId], references: [id], onDelete: Cascade)
+}
