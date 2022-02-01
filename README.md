@@ -71,35 +71,57 @@ Check your Mailbox
 
 
 ### Main Page		
+
 The "MyDPO" logo goes back to home
+
 "Log Out"	botton works
+
 "Search"feature works
+
 Company Infois visible
 
 ### Data Entry and management
-Create Company		
+
+Create Company	
+
 Create App		
-View Company		
+
+View Company	
+
 View App		
-Edit Company		
+
+Edit Company	
+
 Edit App		
+
 Delete Company		
+
 Delete App		
 
 ### Export Reports
+
 Company Diagram	Download
+
 Download Report	Excel report
 
 ### API
 GET Companies (Postman)		
+
 GET Company and Apps Info (Postman)		
+
 POST Company (Postman)		
-POST App Company (Postman)		
+
+POST App Company (Postman)	
+
 PUT Company (Postman)		
+
 PUT App Company (Postman)		
-DELETE Company (Postman)		
+
+DELETE Company (Postman)	
+
 DELETE App Company (Postman)		
 
 
 ## License 
+
 Apache License 2.0 - See licence File
