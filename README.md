@@ -1,4 +1,15 @@
-# MyDPO
+# MyDPO Privacy Mapping App
+
+## Description
+
+The laws governing data are increasing in number, risk, and complexity, and cover all aspects of data including requirements for types of data (e.g. PII, MNPI, PHI), as well as data life cycle management (e.g collection, creation, retention, logging, generation, transformation, use, disclosure, sharing, transmission, and disposal).  Privacy risks and requirements are not fully understood or appreciated by businesses (or networks, validators, etc...), and often result in extensive damages to finances, reputation, or in some cases incarceration.  Businesses often spend too much money trying to comply (using costly and often inadequate solutions), or otherwise try to ignore the problem until they have to face consequences.   
+
+A compliant privacy posture requires a foundation of 3 core privacy processes:  (i) mapping of data (i.e. where / what the data is and rights attached), (ii) protecting the data, and (iii) managing that data effectively, including by providing timely responses to requests from the owners of that data (e.g. Data Subject Access Requests (DSAR)).   This Privacy Mapping Tool is the foundational component of any compliant privacy posture, empowering companies with real-time visibility and auditability, and the ability to  generate/draft reports for Privacy Impact Assessments (“PIA”), and serving as a reference and auto-population for any privacy audit or reporting materials (e.g. SOC2, GLBA, GDPR).  
+
+The platform includes a user-facing dashboard and will have a core functionality for “data mapping” along with space for any additional complementary modules.   Users will be offered survey-based data discovery tools (e.g. a questionnaire to generate a data flow map) as well as automated data discovery tools (e.g. data monitoring to try and detect any MNPI/PII (e.g. a string resembling an SSN like ###-##-####)).  With the map completed, users will gain visibility and understanding as to their full privacy posture, including, but not limited to, meeting regulatory requirements a detailed and accurate understanding as to where all sensitive data including Material Non-Public Information (“MNPI”) or Personally Identifiable Information (“PII”) or Public Health Information (“PHI”), is retrieved, generated, stored, processed, transmitted, or destroyed (the “Data Life Cycle”).  
+
+Furthermore, with the mapping complete, Users will be able to rapidly generate and update Privacy Impact Assessments (“PIA”), and benchmark such assessments against existing regulatory requirements against the open source privacy rules engine. NOTE: This grant application stands alone.  
+
 
 ## Running MyDPO locally
 ### Requisites
