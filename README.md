@@ -12,11 +12,11 @@ Furthermore, with the mapping complete, Users will be able to rapidly generate a
 
 
 ## Running MyDPO locally
-### Requisites
+### Prerequisites
 - Docker
 - Node 16.13.0 (or up)
 
-### Build instructions
+### Build instructions and set up
 Run `docker-compose up -d`.
 Navigate to /mydpo and run `yarn install && cp .env.example .env && yarn prisma:deploy && yarn dev`.
 Navigate to /api and run `yarn install && yarn dev`. MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:9999`. Remember to change both `.env` files to fully customize the ports and connection strings
@@ -60,3 +60,6 @@ INSERT INTO public."Business" (id, "createdAt", "modifiedAt", "consultancyFirmId
 INSERT INTO public."Application" (id, "createdAt", "modifiedAt", "businessId", "applicableRegulations", "applicationDRRegionStored", "applicationHostingEntity", "applicationHostingManagement", "applicationHostingType", "applicationId", "applicationName", "applicationOwner", "applicationRegionStored", "applicationType", comments, "connectionType", "dataRetentionReq", description, "encryptedDataTransfer", "hasDRHosting", "hasNameAndInitials", "technologyOwner", "hasAge", "hasBillingHistory", "hasBiometricData", "hasBirthdate", "hasCivilJusticeInfo", "hasCriminalInfo", "hasDriversLicenceNumber", "hasEmailAddress", "hasEthnicOrigin", "hasFinancialInfo", "hasGender", "hasHealthInfo", "hasHomeAddress", "hasHouseholdInfo", "hasIdNumbers", "hasLocation", "hasMaritalStatus", "hasMedicalInfo", "hasMinorInfo", "hasMobileNumber", "hasNationality", "hasPhysicalCharacteristics", "hasReligiousPhilosophicalPoliticalBeliefs", "hasSexualBehaviour", "hasSocialMedia", "hasStudentInfo", "hasTelephoneNumber", "hasTradeUnionMembership", "hasUniqueDeviceId", modules) VALUES ('ckvrkwbr40020vvodaqftfvf8', '2021-11-09 04:13:41.632', '2021-11-09 04:13:41.632', 'ckvrj0w120106hxodcemu00d8', '{Three,One}', 'SA', 'AWS', '', 'One', null, 'Testeros', 'juano', 'SA', 'Two', '', 'filetransfer', '1 year', 'Testeros description', false, true, true, 'juano', false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, true, false, false, false, false, '{Two}');
 INSERT INTO public."Application" (id, "createdAt", "modifiedAt", "businessId", "applicableRegulations", "applicationDRRegionStored", "applicationHostingEntity", "applicationHostingManagement", "applicationHostingType", "applicationId", "applicationName", "applicationOwner", "applicationRegionStored", "applicationType", comments, "connectionType", "dataRetentionReq", description, "encryptedDataTransfer", "hasDRHosting", "hasNameAndInitials", "technologyOwner", "hasAge", "hasBillingHistory", "hasBiometricData", "hasBirthdate", "hasCivilJusticeInfo", "hasCriminalInfo", "hasDriversLicenceNumber", "hasEmailAddress", "hasEthnicOrigin", "hasFinancialInfo", "hasGender", "hasHealthInfo", "hasHomeAddress", "hasHouseholdInfo", "hasIdNumbers", "hasLocation", "hasMaritalStatus", "hasMedicalInfo", "hasMinorInfo", "hasMobileNumber", "hasNationality", "hasPhysicalCharacteristics", "hasReligiousPhilosophicalPoliticalBeliefs", "hasSexualBehaviour", "hasSocialMedia", "hasStudentInfo", "hasTelephoneNumber", "hasTradeUnionMembership", "hasUniqueDeviceId", modules) VALUES ('ckvs6nckw0290vvodruzcvhlv', '2021-11-09 14:22:34.352', '2021-11-09 14:22:34.352', 'ckvrj0w120106hxodcemu00d8', '{Three,One}', 'NA', 'AWS', '', 'One', null, 'Slack', 'juano', 'SA', 'One', '', 'filetransfer', '3 years', 'chat app', true, true, true, 'juano', false, false, false, false, false, false, false, true, false, true, true, false, false, true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, true, '{Two}');
 ```
+
+## License 
+Apache License 2.0
