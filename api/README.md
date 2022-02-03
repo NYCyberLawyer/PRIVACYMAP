@@ -428,7 +428,7 @@ performs a delete of the company within the URI parameter (does a cascade delete
 
 `DELETE -	${BASE_URL}/company/${COMPANY_ID}`
 
-### Delete Company
+### Delete Application
 
 performs a delete of the application within the URI parameter that belongs to the company within the URI parameter.
 
