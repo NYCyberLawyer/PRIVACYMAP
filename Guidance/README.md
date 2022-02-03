@@ -1,14 +1,14 @@
-# WebAPP - Milestone 3
+# Audit / Report Generation - Milestone 3
 
 ## Description
 
-The deliverable in this stage will consist of an interface where users are led through an adaptive questionnaire to help them identify all data sources of data (e.g. vendors, applications, website, etc..), as well as the types of data and treatment of that information throughout the business life cycle. The result will be a data flow map with drag and drop flexibility to be modified for any developments that may impact privacy throughout the organization.  This data flow map will comprise one module in the privacy mapping dashboard. Furthermore, at each stage, users will identify the databases, servers, and other sources of data, which, in turn, will facilitate the next Milestone(s).  
+Regulators often require that companies owning, managing, or sharing sensitive information must be able to generate a data flow map, as well as a corresponding Privacy Risk Assessment and Privacy Impact Assessment. This step will involve an additional set of questions for Users (e.g. type of report to generate) and provide users the ability to generate / auto-populate reports in PDF or Word format that correspond to those reporting requirements.  (Such reports conducted by consultants often cost at least $8,000 USD per report or update).  These types of reports are in a "Privacy Rules Engine" where various law / audit firms or other organizations (e.g. ISACA, IAPP) can generate / upload their own breakdown of legal requirements and compete for recognition as the authority on that rule or regulation. The reporting requirements for each report generated will be kept up-to-date through that open source privacy rules engine.  As the privacy maps are updated, so will the content of the reports, informing users that a new version of the report is available and thus ensuring that all generated privacy reports are up-to-date date.
 
 Acceptance criteria: Please enter the specific details on what the deliverable must do to prove this milestone is complete.
 Acceptance criteria would consist of the delivery of the following items:
-- Profile Creation / Login Capability for Users to enter a secure space in which to map the data
-- Questionnaire - The generation and deployment of a Privacy Adaptive questionnaire to walk users through and map all data flow processes.
-- Reports - User will be able to see a dashboard with their Data Map, and they will also be able to update their data maps and modify them to reflect changes.  
+1) Privacy Rules outlining requirements of at least GDPR, CCPA, and the Swiss Data Protection Act of 2020; 
+2) A Privacy Rules for businesses or organizations  that want to create their own standards, or their own interpretations of regulatory breakdowns, all for public use; 
+3) Direction for report (default generation is a general privacy impact assessment), and then generation of a corresponding report that can effectively meet audit/legal/risk/compliance requirements.
 
 
 ## License 
