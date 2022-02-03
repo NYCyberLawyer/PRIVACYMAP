@@ -1,14 +1,13 @@
-# API - Milestone 2
+# API Build - Milestone 2
 
 ## Description
 
-The deliverable in this stage will consist of an interface where users are led through an adaptive questionnaire to help them identify all data sources of data (e.g. vendors, applications, website, etc..), as well as the types of data and treatment of that information throughout the business life cycle. The result will be a data flow map with drag and drop flexibility to be modified for any developments that may impact privacy throughout the organization.  This data flow map will comprise one module in the privacy mapping dashboard. Furthermore, at each stage, users will identify the databases, servers, and other sources of data, which, in turn, will facilitate the next Milestone(s).  
+The deliverable in this stage will involve the integration of automated processes within the data flow mapping process.  With the identification of different data sets throughout the organization, users will be provided the opportunity to connect all sources via API to a core repository within the data privacy mapping dashboard. For example, the User may be able to connect an API from their cloud server that can show server location at any one time and be matched to the data type on that server. This data, hosted by the business itself,  will not only illustrate the origin, processing, and destination of each piece of private data within the organization, but will also provide the basis for any additional privacy activities (e.g. consent management).
 
 Acceptance criteria: Please enter the specific details on what the deliverable must do to prove this milestone is complete.
 Acceptance criteria would consist of the delivery of the following items:
-- Profile Creation / Login Capability for Users to enter a secure space in which to map the data
-- Questionnaire - The generation and deployment of a Privacy Adaptive questionnaire to walk users through and map all data flow processes.
-- Reports - User will be able to see a dashboard with their Data Map, and they will also be able to update their data maps and modify them to reflect changes.  
+- API Integration Function - API Integration capabilities. 
+- Repository Module - Secure Data Repository Accessible illustrating data, location, type, and additional metadata required for privacy tracking. 
 
 
 ## License 
