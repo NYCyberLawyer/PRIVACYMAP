@@ -10,6 +10,9 @@ The platform includes a user-facing dashboard and will have a core functionality
 
 Furthermore, with the mapping complete, Users will be able to rapidly generate and update Privacy Impact Assessments (“PIA”), and benchmark such assessments against existing regulatory requirements against the open source privacy rules engine. NOTE: This grant application stands alone.  
 
+### Structure Folder
+- mydpo -> Milestone1
+- api   -> Milestone2
 
 ## Running MyDPO locally
 ### Prerequisites
