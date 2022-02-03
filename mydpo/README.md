@@ -1,4 +1,4 @@
-# MyDPO - Milestone 1
+# WebAPP - Milestone 1
 
 ## Description
 
