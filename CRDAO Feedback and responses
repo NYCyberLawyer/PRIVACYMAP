@@ -1,0 +1,46 @@
+Direct failure response received from CRDAO, details: 
+
+My recommendation for 58
+
+1:2 - PRIVACY MAPPING APPLICATION: Direct Fail 
+- No build or test running instructions on the README (added on main repo Read Me) 
+
+https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/README.md
+
+- No usage documentation (added on main repo Read Me) 
+
+https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/README.md
+
+- No description (expanded on the readme file and licensing)
+
+
+https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/README.md
+
+https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/LICENSE
+
+
+- High-severity security vulnerabilities in their dependencies (Ran CodeQL and verified all vulnerabilities and dependencies)
+
+Also Code scanning active and automated to run.
+
+
+- Repo looks like folders pasted together for submission, rather than a coherent/living project 
+
+This was a migration from one of developers and it was verified and fixed upon feedback and gudelines from grant DXD #158
+
+
+- No CI or static analysis (One folder has some GH actions but inactive because it is just a pasted folder) 
+
+Remediated the old file on GH actions and Code scanning active and automated to run.
+
+
+- No proper API docs other than the docx file uploaded to the repo, which is not ideally following the common practices (new API doc with examples and expected outcomes)
+
+https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/api/README.md
+
+- No contribution or security policy I highly suggest for the OP to examine the repositories of well-known open source projects on GitHub, and study the DxD grant #185.
+
+Secuirty policy - https://github.com/NYCyberLawyer/PRIVACYMAP/security/policy
+
+New documentation based on feedback - https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/README.md
+
