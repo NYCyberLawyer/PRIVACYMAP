@@ -28,7 +28,7 @@ Navigate to /api and run `yarn install && yarn dev`. MyDPO web app will be serve
 
 ### Useful commands
 
-`docker exec -it mydpo_postgres_1 psql -U postgres -W postgres` for performing SQL Queries to the Docker Database
+`docker exec -it mydpo_postgres_1 psql -U postgres -W postgres` for performing SQL Queries to the Docker Database. Remember to select the database using the next command `\c database_name` (default database_name is mydpo).
 
 ### Sample SQL queries
 
