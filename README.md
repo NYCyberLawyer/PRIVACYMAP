@@ -23,7 +23,7 @@ Furthermore, with the mapping complete, Users will be able to rapidly generate a
 
 ### Build instructions and set up
 Run `docker-compose up -d`.
-Navigate to /mydpo and run `yarn install && cp .env.example .env && yarn prisma:deploy && yarn dev`.
+Navigate to /mydpo and run `yarn install && cp .env.example .env && yarn prisma:deploy && yarn dev`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
 Navigate to /api and run `yarn install && yarn dev`. MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:9999`. Remember to change both `.env` files to fully customize the ports and connection strings
 
 ### Useful commands
