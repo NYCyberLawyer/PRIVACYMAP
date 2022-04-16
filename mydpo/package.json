@@ -42,7 +42,7 @@
     "graphql": "^15.5.0",
     "jimp": "^0.16.1",
     "mermaid": "^8.13.6",
-    "next": "^10.0.9",
+    "next": "^12.1.0",
     "next-connect": "^0.10.0",
     "nexus": "^1.0.0",
     "nexus-plugin-prisma": "^0.32.0",
