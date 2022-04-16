@@ -119,6 +119,17 @@ Company Diagram	Download
 
 Download Report	Excel report
 
+### Cypress testing
+
+Install Cypress for Mac, Linux, or Windows (https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn), then get started.
+
+npm install cypress --save-dev
+
+or
+
+yarn add cypress --dev
+
+
 ### API
 GET Companies (Postman)		
 
