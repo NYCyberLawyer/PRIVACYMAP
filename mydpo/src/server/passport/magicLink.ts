@@ -8,6 +8,13 @@ if (!process.env.MAGIC_LINK_SECRET)
     `Please add process.env.MAGIC_LINK_SECRET to your .env file!`
   );
 
+/**
+ * This API implement magic login, this enable User signup and login without passwords. Supports magic links sent via email,
+ *
+ * @github here
+ * https://github.com/mxstbr/passport-magic-login
+ */
+
 const magicLink = new MagicLoginStrategy({
   secret: process.env.MAGIC_LINK_SECRET,
   callbackUrl: "/api/auth/magiclink/callback",
