@@ -2,7 +2,7 @@
 
 ## Description
 
-**mydpo** folder contains code related to the web platform. Using Next.JS/React, GraphQL, Prisma. The code is centralized in mydpo/src folder. The following will be described the content of each section (folders).
+**mydpo** folder contains code related to the web platform. Using Next.JS/React, GraphQL, Prisma. The code is centralized in **mydpo/src** folder. The following will be described the content of each section (folders).
 
 ###  server  
 Contains all the code related to the backend side of the platform, api definition, database interaction, etc.
@@ -16,9 +16,9 @@ Contains all the code related to the frontend side of the platform.
 Into pages folder will find other subfolder, next will describe each one.
 -  **api**: contains callback code for magiclinks, to login to the system.
 -  **app**: this folder contains all the internal pages of the platform. The following will explain the content of each sub folder.
-  - **settings**: page dedicated to user profile.
-  - **add-business**: this page enable to create a new business.
-  - **[slug]**: in this subfolder there are pages related with some specific business
+   - **settings**: page dedicated to user profile.
+   - **add-business**: this page enable to create a new business.
+   - **[slug]**: in this subfolder there are pages related with some specific business
 	 - **add-application**: page to add application to an specific business
 	 - **diagram**: all the components/functions to manage diagrams, for example generate business diagram, one of the main functionalities  in the platform. The library used to generate the diagrams is https://github.com/knsv/mermaid#readme.
 	 - **edit**: page to edit the business selected.
