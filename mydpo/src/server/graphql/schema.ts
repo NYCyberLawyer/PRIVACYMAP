@@ -1,4 +1,4 @@
-import { nexusPrisma } from "nexus-plugin-prisma";
+//import { nexusPrisma } from "nexus-plugin-prisma";
 import { makeSchema } from "nexus";
 import path from "path";
 import User from "./User";
@@ -14,11 +14,11 @@ const shouldGenerateArtifacts =
 
 export const schema = makeSchema({
   types: [User, ConsultancyFirm, Business, Application, Module],
-  plugins: [
+  /*  plugins: [
     nexusPrisma({
       shouldGenerateArtifacts,
     }),
-  ],
+  ], */
   // Type the GraphQL context when used in Nexus resolvers
   contextType: {
     module: path.join(process.cwd(), "src/pages/api/index.ts"),

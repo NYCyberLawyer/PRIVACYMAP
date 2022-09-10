@@ -2,38 +2,43 @@
 
 ## Description
 
-The laws governing data are increasing in number, risk, and complexity, and cover all aspects of data including requirements for types of data (e.g. PII, MNPI, PHI), as well as data life cycle management (e.g collection, creation, retention, logging, generation, transformation, use, disclosure, sharing, transmission, and disposal).  Privacy risks and requirements are not fully understood or appreciated by businesses (or networks, validators, etc...), and often result in extensive damages to finances, reputation, or in some cases incarceration.  Businesses often spend too much money trying to comply (using costly and often inadequate solutions), or otherwise try to ignore the problem until they have to face consequences.   
+The laws governing data are increasing in number, risk, and complexity, and cover all aspects of data including requirements for types of data (e.g. PII, MNPI, PHI), as well as data life cycle management (e.g collection, creation, retention, logging, generation, transformation, use, disclosure, sharing, transmission, and disposal). Privacy risks and requirements are not fully understood or appreciated by businesses (or networks, validators, etc...), and often result in extensive damages to finances, reputation, or in some cases incarceration. Businesses often spend too much money trying to comply (using costly and often inadequate solutions), or otherwise try to ignore the problem until they have to face consequences.
 
-A compliant privacy posture requires a foundation of 3 core privacy processes:  (i) mapping of data (i.e. where / what the data is and rights attached), (ii) protecting the data, and (iii) managing that data effectively, including by providing timely responses to requests from the owners of that data (e.g. Data Subject Access Requests (DSAR)).   This Privacy Mapping Tool is the foundational component of any compliant privacy posture, empowering companies with real-time visibility and auditability, and the ability to  generate/draft reports for Privacy Impact Assessments (“PIA”), and serving as a reference and auto-population for any privacy audit or reporting materials (e.g. SOC2, GLBA, GDPR).  
+A compliant privacy posture requires a foundation of 3 core privacy processes: (i) mapping of data (i.e. where / what the data is and rights attached), (ii) protecting the data, and (iii) managing that data effectively, including by providing timely responses to requests from the owners of that data (e.g. Data Subject Access Requests (DSAR)). This Privacy Mapping Tool is the foundational component of any compliant privacy posture, empowering companies with real-time visibility and auditability, and the ability to generate/draft reports for Privacy Impact Assessments (“PIA”), and serving as a reference and auto-population for any privacy audit or reporting materials (e.g. SOC2, GLBA, GDPR).
 
-The platform includes a user-facing dashboard and will have a core functionality for “data mapping” along with space for any additional complementary modules.   Users will be offered survey-based data discovery tools (e.g. a questionnaire to generate a data flow map) as well as automated data discovery tools (e.g. data monitoring to try and detect any MNPI/PII (e.g. a string resembling an SSN like ###-##-####)).  With the map completed, users will gain visibility and understanding as to their full privacy posture, including, but not limited to, meeting regulatory requirements a detailed and accurate understanding as to where all sensitive data including Material Non-Public Information (“MNPI”) or Personally Identifiable Information (“PII”) or Public Health Information (“PHI”), is retrieved, generated, stored, processed, transmitted, or destroyed (the “Data Life Cycle”).  
+The platform includes a user-facing dashboard and will have a core functionality for “data mapping” along with space for any additional complementary modules. Users will be offered survey-based data discovery tools (e.g. a questionnaire to generate a data flow map) as well as automated data discovery tools (e.g. data monitoring to try and detect any MNPI/PII (e.g. a string resembling an SSN like ###-##-####)). With the map completed, users will gain visibility and understanding as to their full privacy posture, including, but not limited to, meeting regulatory requirements a detailed and accurate understanding as to where all sensitive data including Material Non-Public Information (“MNPI”) or Personally Identifiable Information (“PII”) or Public Health Information (“PHI”), is retrieved, generated, stored, processed, transmitted, or destroyed (the “Data Life Cycle”).
 
-Furthermore, with the mapping complete, Users will be able to rapidly generate and update Privacy Impact Assessments (“PIA”), and benchmark such assessments against existing regulatory requirements against the open source privacy rules engine. NOTE: This grant application stands alone.  
+Furthermore, with the mapping complete, Users will be able to rapidly generate and update Privacy Impact Assessments (“PIA”), and benchmark such assessments against existing regulatory requirements against the open source privacy rules engine. NOTE: This grant application stands alone.
 
-###  Folder Structure
-- mydpo    -> Milestone1
-- api      -> Milestone2
+### Folder Structure
+
+- mydpo -> Milestone1
+- api -> Milestone2
 - Guidance -> Milestone3
 
 ## Running MyDPO locally
+
 ### Prerequisites
+
 - Docker
 - Node 16.13.0 (or up LTS versions recommended)
 - Yarn 1.22.17 (or up)
 
 ### Cloning the Repo
+
 git clone https://github.com/NYCyberLawyer/PRIVACYMAP.git
 
 ### Build instructions and set up
+
 Run `cd PRIVACYMAP/mydpo/`.
 
 Run `docker-compose up -d`.
 
 Navigate to /mydpo and run `yarn install && cp .env.example .env && yarn prisma:deploy && yarn dev`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
 
-Navigate to /api and run `yarn install && yarn dev`. 
+Navigate to /api and run `yarn install && yarn dev`.
 
-MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:9999`. 
+MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:9999`.
 
 Remember to change both `.env` files to fully customize the ports and connection strings
 
@@ -75,21 +80,22 @@ INSERT INTO public."Application" ("id", "createdAt", "modifiedAt", "businessId",
 
 
 ```
+
 ## Testing and Usage of APP
 
-### Login	and see:	
+### Login and see:
+
 Email Address
 Sign In
 Privacy Policy
 Terms of Service
 Check your Mailbox
 
-
-### Main Page		
+### Main Page
 
 The "MyDPO" logo goes back to home
 
-"Log Out"	botton works
+"Log Out" botton works
 
 "Search"feature works
 
@@ -97,30 +103,29 @@ Company Infois visible
 
 ### Data Entry and management
 
-Create Company	
+Create Company
 
-Create App		
+Create App
 
-View Company	
+View Company
 
-View App		
+View App
 
-Edit Company	
+Edit Company
 
-Edit App		
+Edit App
 
-Delete Company		
+Delete Company
 
-Delete App		
+Delete App
 
 ### Export Reports
 
-Company Diagram	Download
+Company Diagram Download
 
-Download Report	Excel report
+Download Report Excel report
 
 # Cypress testing
-
 
 ## Locally
 
@@ -129,6 +134,7 @@ Download Report	Excel report
 ```bash
 npm install
 ```
+
 - Run the project:
 
 ```bash
@@ -138,6 +144,7 @@ npm run cy:open
 - Follow the instructions to run manually the tests:
 
 ### Headless
+
 - We can run the tests in headless mode:
 
 ```bash
@@ -154,6 +161,7 @@ npm install
 ```
 
 - Run the project:
+
 ```bash
 npm run cy:run
 ```
@@ -163,7 +171,7 @@ npm run cy:run
 - Change baseUrl configuration in the file `cypress.config.js`:
 
 ```js
-baseUrl: 'http://localhost:3000'
+baseUrl: "http://localhost:3000";
 ```
 
 - Change the fixture in the file `cypress/fixture/user.json` adding a valid email to run the tests:
@@ -178,35 +186,34 @@ baseUrl: 'http://localhost:3000'
 
 ## Description
 
-The deliverable in this stage will involve the integration of automated processes within the data flow mapping process.  With the identification of different data sets throughout the organization, users will be provided the opportunity to connect all sources via API to a core repository within the data privacy mapping dashboard. For example, the User may be able to connect an API from their cloud server that can show server location at any one time and be matched to the data type on that server. This data, hosted by the business itself,  will not only illustrate the origin, processing, and destination of each piece of private data within the organization, but will also provide the basis for any additional privacy activities (e.g. consent management).
+The deliverable in this stage will involve the integration of automated processes within the data flow mapping process. With the identification of different data sets throughout the organization, users will be provided the opportunity to connect all sources via API to a core repository within the data privacy mapping dashboard. For example, the User may be able to connect an API from their cloud server that can show server location at any one time and be matched to the data type on that server. This data, hosted by the business itself, will not only illustrate the origin, processing, and destination of each piece of private data within the organization, but will also provide the basis for any additional privacy activities (e.g. consent management).
 
 Acceptance criteria: Please enter the specific details on what the deliverable must do to prove this milestone is complete.
 Acceptance criteria would consist of the delivery of the following items:
-- API Integration Function - API Integration capabilities. 
-- Repository Module - Secure Data Repository Accessible illustrating data, location, type, and additional metadata required for privacy tracking. 
 
+- API Integration Function - API Integration capabilities.
+- Repository Module - Secure Data Repository Accessible illustrating data, location, type, and additional metadata required for privacy tracking.
 
 ## API Description
 
-
-All the API requests MUST have a header field  called “api-key” with the value of the user ID. 
+All the API requests MUST have a header field called “api-key” with the value of the user ID.
 
 The `API-KEY` must be requested to the system administrator.
 
 Another header field to set is `Accept` with the value `application/json`.
 
-
 ### Get list of Companies
 
 Retrieves a list of companies that the user has access to.
 
-
 #### Request
 
-`GET -	${BASE_URL}/company/`
+`GET - ${BASE_URL}/company/`
 
 #### Response
+
 Example
+
 ```JSON
 [
    {
@@ -268,13 +275,14 @@ Example
 
 Retrieves a specific company with the apps that are contained within.
 
-
 #### Request
 
-`GET -  ${BASE_URL}/company/${COMPANY_ID}`
+`GET - ${BASE_URL}/company/${COMPANY_ID}`
 
 #### Response
+
 Example
+
 ```JSON
 {
    "company": {
@@ -378,12 +386,12 @@ Example
 
 Performs an insert of the company within the body of the request.
 
-
 #### Request
 
-`POST -	${BASE_URL}/company/`
+`POST - ${BASE_URL}/company/`
 
 Example (body content)
+
 ```JSON
 {
    "companyName": "Test API",
@@ -412,16 +420,17 @@ Example (body content)
    "hrContactEmail": "dasdasd@adsadasd.com.uy"
 }
 ```
+
 ### Create Application
 
 Performs an insert of a new application in the company within the URI parameter.
 
-
 #### Request
 
-`POST -	${BASE_URL}/company/${COMPANY_ID}`
+`POST - ${BASE_URL}/company/${COMPANY_ID}`
 
 Example (body content)
+
 ```JSON
 {
    "applicableRegulations": [
@@ -489,12 +498,12 @@ Example (body content)
 
 Performs an update of the company within the URI parameter.
 
-
 #### Request
 
-`PUT -	${BASE_URL}/company/${COMPANY_ID}`
+`PUT - ${BASE_URL}/company/${COMPANY_ID}`
 
 Example (body content)
+
 ```JSON
 {
    "businessContactEmail": "dsadasd@asdasd.com",
@@ -524,12 +533,12 @@ Example (body content)
 
 Performs an update of the application within the URI parameter that belongs to the company within the URI parameter.
 
-
 #### Request
 
-`PUT -	${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
+`PUT - ${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
 
 Example (body content)
+
 ```JSON
 {
    "applicableRegulations": [
@@ -599,19 +608,17 @@ Example (body content)
 
 performs a delete of the company within the URI parameter (does a cascade delete of the applications that belongs to the company).
 
-
 #### Request
 
-`DELETE -	${BASE_URL}/company/${COMPANY_ID}`
+`DELETE - ${BASE_URL}/company/${COMPANY_ID}`
 
 ### Delete Application
 
 performs a delete of the application within the URI parameter that belongs to the company within the URI parameter.
 
-
 #### Request
 
-`DELETE -	${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
+`DELETE - ${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
 
 # MyDPO Developer Comments
 
@@ -619,38 +626,42 @@ performs a delete of the application within the URI parameter that belongs to th
 
 **mydpo** folder contains code related to the web platform. Using Next.JS/React, GraphQL, Prisma. The code is centralized in **mydpo/src** folder. The following will be described the content of each section (folders).
 
-###  server  
+### server
+
 Contains all the code related to the backend side of the platform, api definition, database interaction, etc.
 Into server folder will find other subfolder, next will describe each one.
+
 - **passport**: code related with user login, signup or manage of magiclink. For the creation of magiclinks https://github.com/mxstbr/passport-magic-login.
-- **graphql**: contains api definition, for each class used in the system there are a folder, for example folders with the name: Application, Business, etc. Otherwise in each of these folders, you can find  database queries related to this classes.
+- **graphql**: contains api definition, for each class used in the system there are a folder, for example folders with the name: Application, Business, etc. Otherwise in each of these folders, you can find database queries related to this classes.
 - **db**: all database definitions, migrations, etc.
 
-###  pages 
+### pages
+
 Contains all the code related to the frontend side of the platform.
 Into pages folder will find other subfolder, next will describe each one.
--  **api**: contains callback code for magiclinks, to login to the system.
--  **app**: this folder contains all the internal pages of the platform. The following will explain the content of each sub folder.
-   - **settings**: page dedicated to user profile.
-   - **add-business**: this page enable to create a new business.
-   - **[slug]**: in this subfolder there are pages related with some specific business
-	 - **add-application**: page to add application to an specific business
-	 - **diagram**: all the components/functions to manage diagrams, for example generate business diagram, one of the main functionalities  in the platform. The library used to generate the diagrams is https://github.com/knsv/mermaid#readme.
-	 - **edit**: page to edit the business selected.
-	 - **[appId]**: in this subfolder there are pages related with some specific app in the business.
-		- **edit**: this page enable to edit fields of the selected app in a specific business.
-		- **index**: page where apps from specific business are listed
 
-###  clients 
+- **api**: contains callback code for magiclinks, to login to the system.
+- **app**: this folder contains all the internal pages of the platform. The following will explain the content of each sub folder.
+  - **settings**: page dedicated to user profile.
+  - **add-business**: this page enable to create a new business.
+  - **[slug]**: in this subfolder there are pages related with some specific business
+  - **add-application**: page to add application to an specific business
+  - **diagram**: all the components/functions to manage diagrams, for example generate business diagram, one of the main functionalities in the platform. The library used to generate the diagrams is https://github.com/knsv/mermaid#readme.
+  - **edit**: page to edit the business selected.
+  - **[appId]**: in this subfolder there are pages related with some specific app in the business.
+    - **edit**: this page enable to edit fields of the selected app in a specific business.
+    - **index**: page where apps from specific business are listed
+
+### clients
+
 Contains all the code related to components used in other pages in the frontend side of the platform.
 Into clients folder will find other subfolder, next will describe each one.
-  - **components**: have some components used in the site, work as a helper.
-  - **graphql**: contains graphql definition of methods.
-  - **stylesheets**: list of styles used in pages of the site.
-  - **hook**: only have some method to create pagination.
 
+- **components**: have some components used in the site, work as a helper.
+- **graphql**: contains graphql definition of methods.
+- **stylesheets**: list of styles used in pages of the site.
+- **hook**: only have some method to create pagination.
 
-
-## License 
+## License
 
 Apache License 2.0 - See licence File

@@ -1,17 +1,80 @@
-import { extendType, nonNull, objectType, stringArg } from "nexus";
+import {
+  arg,
+  extendType,
+  inputObjectType,
+  intArg,
+  nonNull,
+  objectType,
+  stringArg,
+} from "nexus";
 import prisma from "../../db/prisma";
 import slug from "slug";
 import { generateInvitationToken } from "../../invitations/token";
 import { sendEmail } from "../../send-email";
 
+const BusinessWhereUniqueInput = inputObjectType({
+  name: "BusinessWhereUniqueInput",
+  definition(t) {
+    t.string("id");
+  },
+});
+
+const UserWhereUniqueInput = inputObjectType({
+  name: "UserWhereUniqueInput",
+  definition(t) {
+    t.string("email");
+    t.string("id");
+  },
+});
+
 const ConsultancyFirm = objectType({
   name: "ConsultancyFirm",
   definition(t) {
-    t.model.id();
-    t.model.users();
-    t.model.name();
-    t.model.slug();
-    t.model.businesses();
+    t.nonNull.string("id");
+    t.nonNull.list.nonNull.field("businesses", {
+      type: "Business",
+      args: {
+        cursor: arg({ type: BusinessWhereUniqueInput }),
+        take: intArg(),
+        skip: intArg(),
+      },
+      resolve: (parent, args, ctx) => {
+        return ctx.prisma.consultancyFirm
+          .findUnique({
+            where: {
+              id: parent.id,
+            },
+          })
+          .businesses({
+            cursor: args.cursor || undefined,
+            take: args.take || undefined,
+            skip: args.skip || undefined,
+          });
+      },
+    });
+    t.nonNull.string("name");
+    t.nonNull.string("slug");
+    t.nonNull.list.nonNull.field("users", {
+      type: "User",
+      args: {
+        cursor: arg({ type: UserWhereUniqueInput }),
+        take: intArg(),
+        skip: intArg(),
+      },
+      resolve: (parent, args, ctx) => {
+        return ctx.prisma.consultancyFirm
+          .findUnique({
+            where: {
+              id: parent.id,
+            },
+          })
+          .users({
+            cursor: undefined,
+            take: args.take || undefined,
+            skip: args.skip || undefined,
+          });
+      },
+    });
   },
 });
 
