@@ -1,6 +1,6 @@
 const withPrismaPlugin = require("next-prisma-plugin");
 
-module.exports = {
+module.exports = withPrismaPlugin({
   // Necessary for next-on-netlify to work correctly
   target: process.env.NETLIFY ? "experimental-serverless-trace" : undefined,
   webpackDevMiddleware: (config) => {
@@ -14,4 +14,4 @@ module.exports = {
     }
     return config;
   },
-};
+});
