@@ -1,4 +1,4 @@
-const withPrismaPlugin = require("next-prisma-plugin");
+const withPrismaPlugin = require("next-prisma-plugin-webpack5");
 
 module.exports = withPrismaPlugin({
   // Necessary for next-on-netlify to work correctly

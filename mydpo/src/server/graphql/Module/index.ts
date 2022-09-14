@@ -1,11 +1,11 @@
-import {objectType} from "nexus";
+import { objectType } from "nexus";
 
 const Module = objectType({
-    name: 'Module',
-    definition(t) {
-        t.model.id()
-        t.model.name()
-    }
-})
+  name: "Module",
+  definition(t) {
+    t.nonNull.string("id");
+    t.nonNull.string("name");
+  },
+});
 
-export default [Module]
+export default [Module];
