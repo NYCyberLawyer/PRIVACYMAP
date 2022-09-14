@@ -4,10 +4,21 @@ import prisma from "../../db/prisma";
 const User = objectType({
   name: "User",
   definition(t) {
-    t.model.id();
-    t.model.name();
-    t.model.consultancyFirm();
-    t.model.email();
+    t.nonNull.field("consultancyFirm", {
+      type: "ConsultancyFirm",
+      resolve: (parent, _, ctx) => {
+        return ctx.prisma.user
+          .findUnique({
+            where: {
+              id: parent.id,
+            },
+          })
+          .consultancyFirm();
+      },
+    });
+    t.nonNull.string("email");
+    t.nonNull.string("id");
+    t.nonNull.string("name");
   },
 });
 

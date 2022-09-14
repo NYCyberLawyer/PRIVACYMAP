@@ -60,7 +60,7 @@ input ApplicationWhereUniqueInput {
 }
 
 type Business {
-  applications(after: ApplicationWhereUniqueInput, before: ApplicationWhereUniqueInput, first: Int, last: Int): [Application!]!
+  applications(cursor: ApplicationWhereUniqueInput, skip: Int, take: Int): [Application!]!
   businessContactEmail: String!
   businessContactName: String!
   businessContactPhone: String!
@@ -89,11 +89,11 @@ input BusinessWhereUniqueInput {
 }
 
 type ConsultancyFirm {
-  businesses(after: BusinessWhereUniqueInput, before: BusinessWhereUniqueInput, first: Int, last: Int): [Business!]!
+  businesses(cursor: BusinessWhereUniqueInput, skip: Int, take: Int): [Business!]!
   id: String!
   name: String!
   slug: String!
-  users(after: UserWhereUniqueInput, before: UserWhereUniqueInput, first: Int, last: Int): [User!]!
+  users(cursor: UserWhereUniqueInput, skip: Int, take: Int): [User!]!
 }
 
 type Module {
