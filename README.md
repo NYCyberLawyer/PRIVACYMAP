@@ -37,9 +37,11 @@ MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:999
 
 Remember to change both `.env` files to fully customize the ports and connection strings
 
+Warning: remember to set a root password for security purposes otherwise the password will be bypassed leaving the system vulnerable to attacks. Please follow the industry best practices when setting  up such a password.
+
 ### Useful commands
 
-`docker exec -it mydpo_postgres_1 psql -U postgres -W postgres` for performing SQL Queries to the Docker Database. Remember to select the database using the next command `\c database_name` (default database_name is mydpo).
+`docker exec -it mydpo-postgres-1 psql -U postgres -W postgres` for performing SQL Queries to the Docker Database. Remember to select the database using the next command `\c database_name` (default database_name is mydpo).
 
 ### Sample SQL queries
 
