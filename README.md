@@ -169,6 +169,9 @@ npm run cy:open
 ```
 
 - Follow the instructions to run manually the tests:
+	- Select the option with Configured on.
+	- Choose the browser to run the test and press Start
+	- Select the test to run (check-page.cy.js)
 
 ### Headless
 - We can run the tests in headless mode:
