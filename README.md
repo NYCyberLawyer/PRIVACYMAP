@@ -123,8 +123,14 @@ Download Report	Excel report
 
 # Cypress testing
 
+## Prerequisites
+- Node 16.13.0 (or up LTS versions recommended)
+- Yarn 1.22.17 (or up)
+- Repo cloned (git clone https://github.com/NYCyberLawyer/PRIVACYMAP.git)
 
 ## Locally
+
+Run `cd PRIVACYMAP/myDPO-automation/`.
 
 - Install dependencies:
 
