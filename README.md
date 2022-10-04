@@ -29,7 +29,32 @@ Run `cd PRIVACYMAP/mydpo/`.
 
 Run `docker-compose up -d`.
 
-Navigate to /mydpo and run `yarn install && cp .env.example .env && yarn prisma:deploy && yarn dev`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
+Navigate to /mydpo and run `yarn install && cp .env.example .env`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
+
+Edit .env file and put the correct values for the following constants:
+
+-------
+```
+# Choose any random string for these env variables
+# NOTE: In production, make sure they're really long, each unique and unguessable
+MAGIC_LINK_SECRET=fake
+COOKIE_SECRET=fake
+INVITATION_TOKEN_SECRET=fake
+API_TOKEN_SECRET=fake
+
+
+# Get this from the Postmark dashboard (https://postmarkapp.com/)
+POSTMARK_API_TOKEN=fake
+# Set this to whatever email you have configured in Postmark
+POSTMARK_FROM_EMAIL=fake@fake.com
+
+# This is the URL for the local database started with "docker-compose up"
+# NOTE: Only change this if you do not use docker-compose to run the database locally!
+DATABASE_URL='postgres://postgres:postgres@localhost:35432/mydpo'
+```
+-------
+
+After editing run `yarn prisma:deploy && yarn dev`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
 
 Navigate to /api and run `yarn install && yarn dev`. 
 
