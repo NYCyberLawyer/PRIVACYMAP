@@ -68,12 +68,23 @@ Warning: remember to set a root password for security purposes otherwise the pas
 
 `docker exec -it mydpo-postgres-1 psql -U postgres -W postgres` for performing SQL Queries to the Docker Database. Remember to select the database using the next command `\c database_name` (default database_name is mydpo).
 
-### Sample SQL queries
+### Usefull SQL queries
+
+This queries help to setting up the platform. Execute these queries and you have the initial values to use the platform.
 
 ```SQL
+
+1- Create Consultancy Firms
+#Each insert query create a Consultancy Firm, this is needed for the user in the system.
+#ConsultancyFirm (id, name, slug): id = unique random alphanumeric text (25 character) , name: name of ConsultancyFirm, slug: unique random alphanumeric text
+
 INSERT INTO "ConsultancyFirm" (id, name, slug) VALUES ('ckvjuluhp000008l40bgq5x3y', 'MyDPO', 'MyDPO-ckvjuluhp000008l40bgq5x3y');
 INSERT INTO "ConsultancyFirm" (id, name, slug) VALUES ('ckycyltw1000009l83fc13vzo', 'Kreitech', 'KREITECH-ckycyltw1000009l83fc13vzo');
 SELECT * FROM "ConsultancyFirm";
+
+2- Create Users to use the platform
+#Each insert query create a User for a specific Consultancy Firm. This enable a user login in the system. 
+#User (id, email, name, "consultancyFirmId") : id = unique random alphanumeric text (25 character) ,email: user email used to login, name:  user name, consultancyFirmId: Consultancy Firm Id (previously created)
 
 INSERT INTO "User" (id, email, name, "consultancyFirmId") VALUES ('ckvsahypo000008l990jp8f8z', 'jmorello@kreitech.com.uy', 'Juano Morello', 'ckvjuluhp000008l40bgq5x3y');
 INSERT INTO "User" (id, email, name, "consultancyFirmId") VALUES ('ckvsai3sw000108l98xxd9n8o', 'tnieves@kreitech.com.uy', 'Taty Nieves', 'ckvjuluhp000008l40bgq5x3y');
@@ -89,6 +100,8 @@ SELECT * FROM "Business";
 SELECT * FROM "Application";
 SELECT * FROM "Token";
 
+# These queries update Confultantancy Firm in each user.
+
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "consultancyFirmId" = 'ckvjuluhp000008l40bgq5x3y'; -- new
 UPDATE "User" set "consultancyFirmId" = 'ckvjuluhp000008l40bgq5x3y' where "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo'; -- old
 
@@ -96,7 +109,15 @@ UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" =
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" = 'ckvs6nckw0290vvodruzcvhlv';
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" = 'ckvsahypo000008l990jp8f8z';
 
+3-  Create Business (this is optional to create because you can create a new one through the platform)
+#After creating Consultancy Firms and Users you need to create Business. The follow query create a new Business.
+#Some fields to consider: id = unique random alphanumeric text (25 character), consultancyFirmId = Consultancy Firm Id (previously created).
+
 INSERT INTO public."Business" (id, "createdAt", "modifiedAt", "consultancyFirmId", "businessContactEmail", "businessContactName", "businessContactPhone", "businessContactPosition", "companyAddress", "companyEmail", "companyName", "companyPhone", "technicalContactEmail", "technicalContactName", "technicalContactPhone", "technicalContactPosition","privacyLiaisonContactEmail","privacyLiaisonContactName","privacyLiaisonContactPhone", "privacyLiaisonContactPosition",  "hrContactEmail" , "hrContactName","hrContactPhone" , "hrContactPosition") VALUES ('ckvrj0w120106hxodcemu00d8', '2021-11-09 03:21:15.302', '2021-11-09 03:21:15.302', 'ckvjuluhp000008l40bgq5x3y', 'marcelo@kreitech.io', 'Marcelo', 123789456, 'Manager', 'some address 123', 'info@kreitech.io', 'Kreitech LLC', 123456789, 'antonio@kreitech.io', 'Antonio', 987654321, 'CTO','antonio@kreitech.io', 'Antonio', 987654321, 'CTO','antonio@kreitech.io', 'Antonio', 987654321, 'CTO');
+
+4-  Create Application (this is optional to create because you can create a new one through the platform)
+#After creating Business you need to create applications for this Businees
+#Some fields to consider: id = unique random alphanumeric text (25 character), businessId = Business Id (previously created).
 
 INSERT INTO public."Application" ("id", "createdAt", "modifiedAt", "businessId", "applicableRegulations", "applicationDRRegionStored","applicationHostingEntity", "applicationHostingManagement", "applicationHostingType", "applicationName","applicationOwner", "applicationRegionStored", "applicationType", "comments", "connectionType", "dataRetentionReq", "description","encryptedDataTransfer", "hasDRHosting", "hasNameAndInitials", "technologyOwner", "hasAge", "hasBillingHistory", "hasBiometricData", "hasBirthdate", "hasCivilJusticeInfo", "hasCriminalInfo", "hasDriversLicenceNumber", "hasEmailAddress", "hasEthnicOrigin", "hasFinancialInfo","hasGender", "hasHealthInfo", "hasHomeAddress", "hasHouseholdInfo", "hasIdNumbers", "hasLocation", "hasMaritalStatus", "hasMedicalInfo", "hasMinorInfo","hasMobileNumber", "hasNationality", "hasPhysicalCharacteristics", "hasReligiousPhilosophicalPoliticalBeliefs", "hasSexualBehaviour","hasSocialMedia","hasStudentInfo", "hasTelephoneNumber", "hasTradeUnionMembership", "hasUniqueDeviceId", "modules","linkedApps") VALUES ('ckvrkwbr40020vvodaqftfvf8', '2021-11-09 04:13:41.632', '2021-11-09 04:13:41.632', 'ckvrj0w120106hxodcemu00d8','{Three,One}', 'SA', 'AWS', '', 'One',  'Testeros', 'juano', 'SA', 'Two', '', 'filetransfer', '1 year', 'Testeros description', false, true, true,'Juano', false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,false, true, false, false, false, false, false, false, true, false, false, false, false, '{Two}',null);
 
@@ -648,6 +669,11 @@ performs a delete of the application within the URI parameter that belongs to th
 #### Request
 
 `DELETE -	${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
+
+## API Test
+
+Using this postman collection we test the correct functionality of each api method.
+
 
 # MyDPO Developer Comments
 
