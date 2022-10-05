@@ -100,7 +100,7 @@ SELECT * FROM "Business";
 SELECT * FROM "Application";
 SELECT * FROM "Token";
 
-# These queries update Confultantancy Firm in each user.
+# These queries update Consultancy Firm in each user.
 
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "consultancyFirmId" = 'ckvjuluhp000008l40bgq5x3y'; -- new
 UPDATE "User" set "consultancyFirmId" = 'ckvjuluhp000008l40bgq5x3y' where "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo'; -- old
@@ -109,13 +109,13 @@ UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" =
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" = 'ckvs6nckw0290vvodruzcvhlv';
 UPDATE "User" set "consultancyFirmId" = 'ckycyltw1000009l83fc13vzo' where "id" = 'ckvsahypo000008l990jp8f8z';
 
-3-  Create Business (this is optional to create because you can create a new one through the platform)
+3-  Create Business (this is an optional query, because you can create a new one through the platform)
 #After creating Consultancy Firms and Users you need to create Business. The follow query create a new Business.
 #Some fields to consider: id = unique random alphanumeric text (25 character), consultancyFirmId = Consultancy Firm Id (previously created).
 
 INSERT INTO public."Business" (id, "createdAt", "modifiedAt", "consultancyFirmId", "businessContactEmail", "businessContactName", "businessContactPhone", "businessContactPosition", "companyAddress", "companyEmail", "companyName", "companyPhone", "technicalContactEmail", "technicalContactName", "technicalContactPhone", "technicalContactPosition","privacyLiaisonContactEmail","privacyLiaisonContactName","privacyLiaisonContactPhone", "privacyLiaisonContactPosition",  "hrContactEmail" , "hrContactName","hrContactPhone" , "hrContactPosition") VALUES ('ckvrj0w120106hxodcemu00d8', '2021-11-09 03:21:15.302', '2021-11-09 03:21:15.302', 'ckvjuluhp000008l40bgq5x3y', 'marcelo@kreitech.io', 'Marcelo', 123789456, 'Manager', 'some address 123', 'info@kreitech.io', 'Kreitech LLC', 123456789, 'antonio@kreitech.io', 'Antonio', 987654321, 'CTO','antonio@kreitech.io', 'Antonio', 987654321, 'CTO','antonio@kreitech.io', 'Antonio', 987654321, 'CTO');
 
-4-  Create Application (this is optional to create because you can create a new one through the platform)
+4-  Create Application (this is an optional query, because you can create a new one through the platform)
 #After creating Business you need to create applications for this Businees
 #Some fields to consider: id = unique random alphanumeric text (25 character), businessId = Business Id (previously created).
 
