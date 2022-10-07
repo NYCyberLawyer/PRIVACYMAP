@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "8d2543ce-b046-4fba-9686-15238f69c113",
+		"name": "MyDPO API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET companies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET company",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/cl8yriq860000xauu15g753kc",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"cl8yriq860000xauu15g753kc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyName\": \"Test API\",\n    \"companyAddress\": \"API 123\",\n    \"companyPhone\": \"123123123\",\n    \"companyEmail\": \"api@kreitech.io\",\n\n    \"businessContactName\": \"sadsad\",\n    \"businessContactPosition\": \"sadsad\",\n    \"businessContactPhone\": \"321313\",\n    \"businessContactEmail\": \"dasdas@asdsad.com\",\n\n    \"technicalContactName\": \"sdsadasda\",\n    \"technicalContactPosition\": \"sasasasad\",\n    \"technicalContactPhone\": \"765434234\",\n    \"technicalContactEmail\": \"dsadsa@asdsad.com\",\n\n    \"privacyLiaisonContactName\": \"dsadada\",\n    \"privacyLiaisonContactPosition\": \"dsadadada\",\n    \"privacyLiaisonContactPhone\": \"321313131\",\n    \"privacyLiaisonContactEmail\": \"sadasd@hdjsdas.io\",\n\n    \"hrContactName\": \"sdsdasdadsa\",\n    \"hrContactPosition\": \"dsadadad\",\n    \"hrContactPhone\": \"12313131\",\n    \"hrContactEmail\": \"dasdasd@adsadasd.com.uy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST app",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"applicableRegulations\": [\n        \"GDPR\"\n    ],\n    \"applicationDRRegionStored\": \"\",\n    \"applicationHostingEntity\": \"AWS\",\n    \"applicationHostingManagement\": \"Self Hosted\",\n    \"applicationHostingType\": \"On Premise\",\n    \"applicationName\": \"API APP\",\n    \"applicationOwner\": \"Some dude\",\n    \"applicationRegionStored\": \"centus\",\n    \"applicationType\": \"service\",\n    \"comments\": \"\",\n    \"connectionType\": \"api\",\n    \"dataRetentionReq\": \"5 years\",\n    \"description\": \"sdasdas\",\n    \"encryptedDataTransfer\": true,\n    \"hasDRHosting\": false,\n    \"hasNameAndInitials\": false,\n    \"technologyOwner\": \"Other dude\",\n    \"hasAge\": false,\n    \"hasBillingHistory\": false,\n    \"hasBiometricData\": false,\n    \"hasBirthdate\": false,\n    \"hasCivilJusticeInfo\": false,\n    \"hasCriminalInfo\": false,\n    \"hasDriversLicenceNumber\": true,\n    \"hasEmailAddress\": false,\n    \"hasEthnicOrigin\": false,\n    \"hasFinancialInfo\": true,\n    \"hasGender\": false,\n    \"hasHealthInfo\": false,\n    \"hasHomeAddress\": false,\n    \"hasHouseholdInfo\": false,\n    \"hasIdNumbers\": false,\n    \"hasLocation\": false,\n    \"hasMaritalStatus\": false,\n    \"hasMedicalInfo\": false,\n    \"hasMinorInfo\": false,\n    \"hasMobileNumber\": false,\n    \"hasNationality\": false,\n    \"hasPhysicalCharacteristics\": false,\n    \"hasReligiousPhilosophicalPoliticalBeliefs\": false,\n    \"hasSexualBehaviour\": false,\n    \"hasSocialMedia\": false,\n    \"hasStudentInfo\": true,\n    \"hasTelephoneNumber\": false,\n    \"hasTradeUnionMembership\": false,\n    \"hasUniqueDeviceId\": false,\n    \"modules\": [\n        \"dsad\",\n        \" sdad\",\n        \" asdasd\"\n    ],\n    \"linkedApps\": [\n        \"cl8yrmu090001xauub8voahg6\",\n        \"PENDING\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/cl8yriq860000xauu15g753kc/app",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"cl8yriq860000xauu15g753kc",
+						"app"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT company",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"businessContactEmail\": \"dsadasd@asdasd.com\",\n    \"businessContactName\": \"dsadas\",\n    \"businessContactPhone\": \"23131\",\n    \"businessContactPosition\": \"sdada\",\n    \"companyAddress\": \"sdasdasdas\",\n    \"companyEmail\": \"dsadasd@asdasd.com\",\n    \"companyName\": \"abtest LLC\",\n    \"companyPhone\": \"32312312\",\n    \"technicalContactEmail\": \"dsadasd@asdasd.com\",\n    \"technicalContactName\": \"sdadasd\",\n    \"technicalContactPhone\": \"23131\",\n    \"technicalContactPosition\": \"dsadas\",\n    \"privacyLiaisonContactEmail\": \"dsadasd@asdasd.com\",\n    \"privacyLiaisonContactName\": \"dsadad\",\n    \"privacyLiaisonContactPhone\": \"231312\",\n    \"privacyLiaisonContactPosition\": \"dsadas\",\n    \"hrContactEmail\": \"dsadasd@asdasd.com\",\n    \"hrContactName\": \"dsadas\",\n    \"hrContactPhone\": \"23213131\",\n    \"hrContactPosition\": \"dsadasd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/cl8yriq860000xauu15g753kc",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"cl8yriq860000xauu15g753kc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT app",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "ckvsahypo000008l990jp8f8z",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"applicableRegulations\": [\n        \"GDPR\",\n        \"HIPAA\",\n        \"CCPA\"\n    ],\n    \"applicationDRRegionStored\": \"\",\n    \"applicationHostingEntity\": \"AWS\",\n    \"applicationHostingManagement\": \"Self Hosted\",\n    \"applicationHostingType\": \"On Premise\",\n    \"applicationName\": \"API APP\",\n    \"applicationOwner\": \"Some dude\",\n    \"applicationRegionStored\": \"centus\",\n    \"applicationType\": \"service\",\n    \"comments\": \"\",\n    \"connectionType\": \"api\",\n    \"dataRetentionReq\": \"5 years\",\n    \"description\": \"sdasdas\",\n    \"encryptedDataTransfer\": true,\n    \"hasDRHosting\": false,\n    \"hasNameAndInitials\": false,\n    \"technologyOwner\": \"Other dude\",\n    \"hasAge\": false,\n    \"hasBillingHistory\": false,\n    \"hasBiometricData\": false,\n    \"hasBirthdate\": false,\n    \"hasCivilJusticeInfo\": false,\n    \"hasCriminalInfo\": false,\n    \"hasDriversLicenceNumber\": true,\n    \"hasEmailAddress\": false,\n    \"hasEthnicOrigin\": false,\n    \"hasFinancialInfo\": true,\n    \"hasGender\": false,\n    \"hasHealthInfo\": false,\n    \"hasHomeAddress\": false,\n    \"hasHouseholdInfo\": false,\n    \"hasIdNumbers\": false,\n    \"hasLocation\": false,\n    \"hasMaritalStatus\": false,\n    \"hasMedicalInfo\": false,\n    \"hasMinorInfo\": false,\n    \"hasMobileNumber\": false,\n    \"hasNationality\": false,\n    \"hasPhysicalCharacteristics\": false,\n    \"hasReligiousPhilosophicalPoliticalBeliefs\": false,\n    \"hasSexualBehaviour\": false,\n    \"hasSocialMedia\": false,\n    \"hasStudentInfo\": true,\n    \"hasTelephoneNumber\": false,\n    \"hasTradeUnionMembership\": false,\n    \"hasUniqueDeviceId\": false,\n    \"modules\": [\n        \"dsad\",\n        \" sdad\",\n        \" asdasd\"\n    ],\n    \"linkedApps\": [\n        \"ckwwft40z1245aip8t1lzg8ic\",\n        \"ckwxu1jme01596vp82e06azjn\",\n        \"PENDING\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9999/company/ckwv0hj7z1076h7p8sqbaz2za/app/cky1rwzuw0001q0p82oh7g3ac",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"ckwv0hj7z1076h7p8sqbaz2za",
+						"app",
+						"cky1rwzuw0001q0p82oh7g3ac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE company",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "ckvsahypo000008l990jp8f8z",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:9999/company/ckwv0hj7z1076h7p8sqbaz2za",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"ckwv0hj7z1076h7p8sqbaz2za"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE app",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "ckvsahypo000008l990jp8f8z",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:9999/company/ckwv0hj7z1076h7p8sqbaz2za/app/cky1s1k320002q0p80u492pf5",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"ckwv0hj7z1076h7p8sqbaz2za",
+						"app",
+						"cky1s1k320002q0p80u492pf5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "30006e49-f66b-42f7-a40b-e2bfd6ebc3bb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2b0f1eca-4dd4-47c8-86b5-b6a69721e183",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "785d9b3f-840f-4f72-aeb6-7369bd59175a",
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "87d10f74-f6ef-47e3-b1ff-9ba1ebde57af",
+			"key": "API_KEY",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
