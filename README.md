@@ -711,8 +711,9 @@ Into clients folder will find other subfolder, next will describe each one.
   - **stylesheets**: list of styles used in pages of the site.
   - **hook**: only have some method to create pagination.
 
+## More information
+In `mydpo/doc` there are html documentation about developers comments in mydpo project
 
-
-## License 
+# License 
 
 Apache License 2.0 - See licence File
