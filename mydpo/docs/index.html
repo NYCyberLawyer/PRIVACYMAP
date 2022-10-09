@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">MyDPO Developer Comments</h1>
+
+    
+
+    <p><strong>mydpo</strong> folder contains code related to the web platform. Using Next.JS/React, GraphQL, Prisma. The code is centralized in <strong>mydpo/src</strong> folder. The following will be described the content of each section (folders).</p>
+    <h3 id="server">server</h3>
+    <p>Contains all the code related to the backend side of the platform, api definition, database interaction, etc.
+    Into server folder will find other subfolder, next will describe each one.</p>
+    <ul>
+    <li><strong>passport</strong>: code related with user login, signup or manage of magiclink. For the creation of magiclinks <a href="https://github.com/mxstbr/passport-magic-login">https://github.com/mxstbr/passport-magic-login</a>.</li>
+    <li><strong>graphql</strong>: contains api definition, for each class used in the system there are a folder, for example folders with the name: Application, Business, etc. Otherwise in each of these folders, you can find  database queries related to this classes.</li>
+    <li><strong>db</strong>: all database definitions, migrations, etc.</li>
+    </ul>
+    <h3 id="pages">pages</h3>
+    <p>Contains all the code related to the frontend side of the platform.
+    Into pages folder will find other subfolder, next will describe each one.</p>
+    <ul>
+    <li><strong>api</strong>: contains callback code for magiclinks, to login to the system.</li>
+    <li><strong>app</strong>: this folder contains all the internal pages of the platform. The following will explain the content of each sub folder.<ul>
+    <li><strong>settings</strong>: page dedicated to user profile.</li>
+    <li><strong>add-business</strong>: this page enable to create a new business.</li>
+    <li><strong>[slug]</strong>: in this subfolder there are pages related with some specific business<ul>
+    <li><strong>add-application</strong>: page to add application to an specific business</li>
+    <li><strong>diagram</strong>: all the components/functions to manage diagrams, for example generate business diagram, one of the main functionalities  in the platform. The library used to generate the diagrams is <a href="https://github.com/knsv/mermaid#readme">https://github.com/knsv/mermaid#readme</a>.</li>
+    <li><strong>edit</strong>: page to edit the business selected.</li>
+    <li><strong>[appId]</strong>: in this subfolder there are pages related with some specific app in the business.<ul>
+    <li><strong>edit</strong>: this page enable to edit fields of the selected app in a specific business.</li>
+    <li><strong>index</strong>: page where apps from specific business are listed</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="clients">clients</h3>
+    <p>Contains all the code related to components used in other pages in the frontend side of the platform.
+    Into clients folder will find other subfolder, next will describe each one.</p>
+    <ul>
+    <li><strong>components</strong>: have some components used in the site, work as a helper.</li>
+    <li><strong>graphql</strong>: contains graphql definition of methods.</li>
+    <li><strong>stylesheets</strong>: list of styles used in pages of the site.</li>
+    <li><strong>hook</strong>: only have some method to create pagination.</li>
+    </ul>
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Folders</h3><ul><li><a href="module-client_components.html">client/components</a></li><li><a href="module-pages_app.html">pages/app</a></li><li><a href="module-pages_app_%25252525255Bslug%25252525255D.html">pages/app/[slug]</a></li><li><a href="module-pages_app_%25255Bslug%25255D_%25255BappId%25255D.html">pages/app/[slug]/[appId]</a></li><li><a href="module-server.html">server</a></li><li><a href="module-server_invitations.html">server/invitations</a></li><li><a href="module-server_passport.html">server/passport</a></li></ul><h3>Interfaces</h3><ul><li><a href="module-server-SendEmailInput.html">SendEmailInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+
+
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
