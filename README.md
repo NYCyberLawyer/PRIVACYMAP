@@ -672,7 +672,7 @@ performs a delete of the application within the URI parameter that belongs to th
 
 ## API Test
 
-Using this [postman](/blob/main/api/MyDPO_API.postman_collection.json) collection to test each api method.
+Using this [postman](https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/api/MyDPO_API.postman_collection.json) collection to test each api method.
 
 
 # MyDPO Developer Comments
