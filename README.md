@@ -56,7 +56,20 @@ DATABASE_URL='postgres://postgres:postgres@localhost:35432/mydpo'
 
 After editing run `yarn prisma:deploy && yarn dev`. (if you don't use a sudo user, execute `sudo chmod 777 database -R`).
 
-Navigate to /api and run `yarn install && yarn dev`. 
+Navigate to /api and edit .env file and put the correct values for the following constants:
+
+-------
+```
+# This is the URL for the local database started with "docker-compose up" in mydpo folder
+# NOTE: Only change this if you do not use docker-compose to run the database locally!
+DATABASE_URL='postgres://postgres:postgres@localhost:35432/mydpo'
+
+#Port where the api is listening
+PORT=9999
+```
+-------
+
+After editing run `yarn install && yarn dev`. 
 
 MyDPO web app will be served on `localhost:3000` and MyDPO api on `localhost:9999`. 
 
