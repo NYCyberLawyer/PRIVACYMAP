@@ -683,10 +683,15 @@ performs a delete of the application within the URI parameter that belongs to th
 
 `DELETE -	${BASE_URL}/company/${COMPANY_ID}/app/${APP_ID}`
 
+## More information
+In `api/doc` there are html documentation about developers comments in api project
+
+
 ## API Test
 
 Using this [postman](https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/api/MyDPO_API.postman_collection.json) collection to test each api method.
 
+The [follow](https://github.com/NYCyberLawyer/PRIVACYMAP/blob/main/api/postman_configuration.docx) document explain postman collection import
 
 # MyDPO Developer Comments
 

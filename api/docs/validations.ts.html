@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: validations.ts</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: validations.ts</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module validations.ts */
+
+/**
+ * Validate if applicableRegulations field is valid
+ * @function isValidApplicableRegulations
+ */
+const isValidApplicableRegulations = (value) => {
+    const isValid = value.every((currentValue) => {
+        return currentValue == 'GDPR' ||
+            currentValue == 'CCPA' ||
+            currentValue == 'Nevada Privacy Act' ||
+            currentValue == 'HIPAA' ||
+            currentValue == 'Swiss Data Privacy Act'
+    })
+    if (!isValid) return Promise.reject('Invalid applicableRegulations field values')
+    else return Promise.resolve()
+}
+
+/**
+ * Validate if applicationType field is valid
+ * @function applicationType
+ */
+const isValidApplicationType = (value) => {
+    const isValid = value == 'service' || value == 'application'
+
+    if (!isValid) return Promise.reject('Invalid applicationType field values')
+    else return Promise.resolve()
+}
+
+/**
+ * Validate if isValidApplicationHostingType field is valid
+ * @function isValidApplicationHostingType
+ */
+const isValidApplicationHostingType = (value) => {
+    const isValid = value == 'Cloud' || value == 'On Premise' || value == 'Distributed'
+    if (!isValid) return Promise.reject('Invalid applicationHostingType field values')
+    else return Promise.resolve()
+}
+
+/**
+ * Validate if ApplicationHostingManagement field is valid
+ * @function isValidApplicationHostingManagement
+ */
+const isValidApplicationHostingManagement = (value) => {
+    const isValid = value == 'SaaS' || value == 'IaaS' || value == 'PaaS' || value == 'Self Hosted' || value == 'Co-Location'
+    if (!isValid) return Promise.reject('Invalid ApplicationHostingManagement field values')
+    else return Promise.resolve()
+}
+
+/**
+ * Validate if applicationConnectionType field is valid
+ * @function isValidApplicationConnectionType
+ */
+const isValidApplicationConnectionType = (value) => {
+    const isValid = value == 'filetransfer' || value == 'api' || value == 'batch' || value == 'manual'
+    if (!isValid) return Promise.reject('Invalid applicationConnectionType field values')
+    else return Promise.resolve()
+}
+
+export {
+    isValidApplicableRegulations,
+    isValidApplicationType,
+    isValidApplicationHostingType,
+    isValidApplicationHostingManagement,
+    isValidApplicationConnectionType
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Folder(src)</h3><ul><li><a href="index.module_ts.html">index.ts</a></li><li><a href="validations.module_ts.html">validations.ts</a></li></ul>
+</nav>
+
+<br class="clear">
+
+
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
