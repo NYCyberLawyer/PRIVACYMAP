@@ -52,8 +52,8 @@
 					"script": {
 						"id": "f55077e7-0c1b-488e-8b22-eb2a3b5389b8",
 						"exec": [
-							"pm.test(\"GET companies\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"pm.test(\"GET companies - Invalid api-key\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid api-key\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -109,14 +109,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/ckylxb5fj0081ekujshutk290",
+					"raw": "{{BASE_URL}}:9999/company/cl9n7tvps00077cujby5x2wqz",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"ckylxb5fj0081ekujshutk290"
+						"cl9n7tvps00077cujby5x2wqz"
 					]
 				}
 			},
@@ -130,8 +130,8 @@
 					"script": {
 						"id": "c33e1682-c0c1-4fd3-af39-65e703e7120e",
 						"exec": [
-							"pm.test(\"GET company\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"pm.test(\"GET company - Fail - company not exit\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company not found\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -216,8 +216,8 @@
 					"script": {
 						"id": "d8bfac45-2e3c-4d99-b50d-85ec9ad43f71",
 						"exec": [
-							"pm.test(\"POST company\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"pm.test(\"POST company - Fail -  missing some parameter in  company validation\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid value\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -290,14 +290,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n51l1q00047cujhfko5g3v/app",
+					"raw": "{{BASE_URL}}:9999/company/cl9n7tvps00077cujby5x2wqz/app",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n51l1q00047cujhfko5g3v",
+						"cl9n7tvps00077cujby5x2wqz",
 						"app"
 					]
 				}
@@ -312,8 +312,8 @@
 					"script": {
 						"id": "546cd891-8757-418d-8cd2-2a316d8292de",
 						"exec": [
-							"pm.test(\"POST app\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"pm.test(\"POST app - Fail -  missing some parameter in  app validation\", function () {",
+							"     pm.expect(pm.response.text()).to.include(\"Invalid value\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -388,14 +388,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n6g41f00057cuj2xbxb2hk",
+					"raw": "{{BASE_URL}}:9999/company/cl9n7tvps00077cujby5x2wqz",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n6g41f00057cuj2xbxb2hk"
+						"cl9n7tvps00077cujby5x2wqz"
 					]
 				}
 			},
@@ -409,8 +409,8 @@
 					"script": {
 						"id": "08dd260f-d406-4269-959c-60bd6b60ffaf",
 						"exec": [
-							"pm.test(\"PUT company\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"pm.test(\"PUT company - Fail -  invalid format in some parameter in  company validation\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid value\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -484,7 +484,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n47hdv00007cuj9nw8dmnz",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n89ndj000a7cujbsdp171q",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -493,7 +493,7 @@
 						"company",
 						"cl9n3t0f30002qquj4m2yf2yc",
 						"app",
-						"cl9n47hdv00007cuj9nw8dmnz"
+						"cl9n89ndj000a7cujbsdp171q"
 					]
 				}
 			},
@@ -507,8 +507,8 @@
 					"script": {
 						"id": "86f7419c-ef71-4551-ad86-057c8f43abcf",
 						"exec": [
-							"pm.test(\"PUT app\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"pm.test(\"PUT app - Fail -  invalid format in some parameter in  app validation\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid applicationConnectionType field values\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -575,7 +575,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/ckylxhw2e0837ekujpiis5zk6",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n89ndj000a7cujbsdp171q",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -584,7 +584,7 @@
 						"company",
 						"cl9n3t0f30002qquj4m2yf2yc",
 						"app",
-						"ckylxhw2e0837ekujpiis5zk6"
+						"cl9n89ndj000a7cujbsdp171q"
 					]
 				}
 			},
@@ -598,8 +598,8 @@
 					"script": {
 						"id": "1919a661-3a21-4331-abc9-09cedfcc7058",
 						"exec": [
-							"pm.test(\"DELETE app\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"pm.test(\"DELETE app - Fail - app not exist\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"application not found\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -616,7 +616,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/ckwv0hj7z1076h7p8sqbaz2za/app/cky1s1k320002q0p80u492pf5",
+					"raw": "{{BASE_URL}}:9999/company/ckwv0hj7z1076h7p8sqbaz2za/app/cl9n8h3sw000b7cujhza830pk",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -625,7 +625,7 @@
 						"company",
 						"ckwv0hj7z1076h7p8sqbaz2za",
 						"app",
-						"cky1s1k320002q0p80u492pf5"
+						"cl9n8h3sw000b7cujhza830pk"
 					]
 				}
 			},
@@ -657,14 +657,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n6g41f00057cuj2xbxb2hk",
+					"raw": "{{BASE_URL}}:9999/company/cl9n7tvps00077cujby5x2wqz",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n6g41f00057cuj2xbxb2hk"
+						"cl9n7tvps00077cujby5x2wqz"
 					]
 				}
 			},
@@ -678,8 +678,8 @@
 					"script": {
 						"id": "12c7348a-c787-4049-a540-df4ad65b0a5c",
 						"exec": [
-							"pm.test(\"DELETE company\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"pm.test(\"DELETE company - Fail - company not exist\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company not found\");",
 							"});"
 						],
 						"type": "text/javascript"
