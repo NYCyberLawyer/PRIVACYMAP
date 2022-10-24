@@ -1,12 +1,26 @@
 {
 	"info": {
-		"_postman_id": "d2023f4b-c416-4198-8771-1f0af18d8fb6",
+		"_postman_id": "a2f68f77-2441-4cc9-a7df-67946ea48fa4",
 		"name": "MyDPO - API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "GET companies - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b34d61a-c3aa-45fe-9af8-07dc738821c8",
+						"exec": [
+							"pm.test(\"GET companies\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -32,6 +46,20 @@
 		},
 		{
 			"name": "GET companies - Fail - Authentication fail incorrect API-KEY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f55077e7-0c1b-488e-8b22-eb2a3b5389b8",
+						"exec": [
+							"pm.test(\"GET companies\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -57,6 +85,20 @@
 		},
 		{
 			"name": "GET company - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f84e55fa-7a75-4e21-96cf-5709ad32b6d9",
+						"exec": [
+							"pm.test(\"GET company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -67,14 +109,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
+					"raw": "{{BASE_URL}}:9999/company/ckylxb5fj0081ekujshutk290",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n3t0f30002qquj4m2yf2yc"
+						"ckylxb5fj0081ekujshutk290"
 					]
 				}
 			},
@@ -82,6 +124,20 @@
 		},
 		{
 			"name": "GET company - Fail - company not exit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c33e1682-c0c1-4fd3-af39-65e703e7120e",
+						"exec": [
+							"pm.test(\"GET company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companyAddress\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -107,6 +163,20 @@
 		},
 		{
 			"name": "POST company - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "534c6f6d-becd-43c9-a9cb-4b5a1d767fda",
+						"exec": [
+							"pm.test(\"POST company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -140,6 +210,20 @@
 		},
 		{
 			"name": "POST company - Fail -  missing some parameter in  company validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d8bfac45-2e3c-4d99-b50d-85ec9ad43f71",
+						"exec": [
+							"pm.test(\"POST company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -173,6 +257,20 @@
 		},
 		{
 			"name": "POST app - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2c05668-1eb2-43c6-bce5-bac3b28241bc",
+						"exec": [
+							"pm.test(\"POST app\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -192,14 +290,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app",
+					"raw": "{{BASE_URL}}:9999/company/cl9n51l1q00047cujhfko5g3v/app",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n3t0f30002qquj4m2yf2yc",
+						"cl9n51l1q00047cujhfko5g3v",
 						"app"
 					]
 				}
@@ -208,6 +306,20 @@
 		},
 		{
 			"name": "POST app - Fail -  missing some parameter in  app validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "546cd891-8757-418d-8cd2-2a316d8292de",
+						"exec": [
+							"pm.test(\"POST app\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -243,6 +355,20 @@
 		},
 		{
 			"name": "PUT company - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f35adab-db2a-47cb-bb56-861d93d20f68",
+						"exec": [
+							"pm.test(\"PUT company\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -262,14 +388,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
+					"raw": "{{BASE_URL}}:9999/company/cl9n6g41f00057cuj2xbxb2hk",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n3t0f30002qquj4m2yf2yc"
+						"cl9n6g41f00057cuj2xbxb2hk"
 					]
 				}
 			},
@@ -277,6 +403,20 @@
 		},
 		{
 			"name": "PUT company - Fail -  invalid format in some parameter in  company validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08dd260f-d406-4269-959c-60bd6b60ffaf",
+						"exec": [
+							"pm.test(\"PUT company\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -311,6 +451,20 @@
 		},
 		{
 			"name": "PUT app - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba6db752-d68f-4b62-aa9d-bd36dbdba12c",
+						"exec": [
+							"pm.test(\"PUT app\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -347,6 +501,20 @@
 		},
 		{
 			"name": "PUT app - Fail -  invalid format in some parameter in  app validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86f7419c-ef71-4551-ad86-057c8f43abcf",
+						"exec": [
+							"pm.test(\"PUT app\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202,204]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -383,6 +551,20 @@
 		},
 		{
 			"name": "DELETE app - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b3fe864-024e-4a8c-b83b-a57f5176e52c",
+						"exec": [
+							"pm.test(\"DELETE app\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -393,7 +575,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n47hdv00007cuj9nw8dmnz",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/ckylxhw2e0837ekujpiis5zk6",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -402,7 +584,7 @@
 						"company",
 						"cl9n3t0f30002qquj4m2yf2yc",
 						"app",
-						"cl9n47hdv00007cuj9nw8dmnz"
+						"ckylxhw2e0837ekujpiis5zk6"
 					]
 				}
 			},
@@ -410,6 +592,20 @@
 		},
 		{
 			"name": "DELETE app - Fail - app not exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1919a661-3a21-4331-abc9-09cedfcc7058",
+						"exec": [
+							"pm.test(\"DELETE app\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -437,6 +633,20 @@
 		},
 		{
 			"name": "DELETE company - Ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ca8af3b-56a5-4a13-acb6-98adcefeba7e",
+						"exec": [
+							"pm.test(\"DELETE company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -447,14 +657,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
+					"raw": "{{BASE_URL}}:9999/company/cl9n6g41f00057cuj2xbxb2hk",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl9n3t0f30002qquj4m2yf2yc"
+						"cl9n6g41f00057cuj2xbxb2hk"
 					]
 				}
 			},
@@ -462,6 +672,20 @@
 		},
 		{
 			"name": "DELETE company - Fail - company not exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12c7348a-c787-4049-a540-df4ad65b0a5c",
+						"exec": [
+							"pm.test(\"DELETE company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"deleted\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -490,7 +714,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "30006e49-f66b-42f7-a40b-e2bfd6ebc3bb",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -500,7 +723,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2b0f1eca-4dd4-47c8-86b5-b6a69721e183",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -510,15 +732,15 @@
 	],
 	"variable": [
 		{
-			"id": "2fd98a23-83dc-486d-92fb-fc1527c3e14f",
+			"id": "a6ea04a2-a231-402b-a29e-4213179f6073",
 			"key": "BASE_URL",
-			"value": "",
+			"value": "http://174.138.41.162",
 			"type": "string"
 		},
 		{
-			"id": "d0bef207-e21e-4a91-a81b-7cbc8954bf8b",
+			"id": "638f6b7a-c1ac-464f-bed1-4c32ca29946f",
 			"key": "API_KEY",
-			"value": "",
+			"value": "ckvsahypo000008l990jp8f8z",
 			"type": "string"
 		}
 	],
