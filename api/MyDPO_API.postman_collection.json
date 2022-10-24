@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "8d2543ce-b046-4fba-9686-15238f69c113",
-		"name": "MyDPO API",
+		"_postman_id": "d2023f4b-c416-4198-8771-1f0af18d8fb6",
+		"name": "MyDPO - API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -67,14 +67,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fc01rz7",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl8yrundq0002xauu4fc01rz7"
+						"cl9n3t0f30002qquj4m2yf2yc"
 					]
 				}
 			},
@@ -192,14 +192,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fc01rz7/app",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl8yrundq0002xauu4fc01rz7",
+						"cl9n3t0f30002qquj4m2yf2yc",
 						"app"
 					]
 				}
@@ -227,14 +227,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fc01rz7/app",
+					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fcdf01rz7/app",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl8yrundq0002xauu4fc01rz7",
+						"cl8yrundq0002xauu4fcdf01rz7",
 						"app"
 					]
 				}
@@ -262,14 +262,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fc01rz7",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl8yrundq0002xauu4fc01rz7"
+						"cl9n3t0f30002qquj4m2yf2yc"
 					]
 				}
 			},
@@ -330,16 +330,16 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl8yrundq0002xauu4fc01rz7/app/cl9mwcoxs00015cuu75b134xb",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n47hdv00007cuj9nw8dmnz",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"cl8yrundq0002xauu4fc01rz7",
+						"cl9n3t0f30002qquj4m2yf2yc",
 						"app",
-						"cl9mwcoxs00015cuu75b134xb"
+						"cl9n47hdv00007cuj9nw8dmnz"
 					]
 				}
 			},
@@ -382,56 +382,6 @@
 			"response": []
 		},
 		{
-			"name": "DELETE company - Ok",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "api-key",
-						"value": "{{API_KEY}}",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9mwbyez00005cuu9f8q6n68",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"port": "9999",
-					"path": [
-						"company",
-						"cl9mwbyez00005cuu9f8q6n68"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE company - Fail - company not exist",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "api-key",
-						"value": "{{API_KEY}}",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "{{BASE_URL}}:9999/company/cl9mwbyez00005cdduu9f8q6n6asd",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"port": "9999",
-					"path": [
-						"company",
-						"cl9mwbyez00005cdduu9f8q6n6asd"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "DELETE app - Ok",
 			"request": {
 				"method": "DELETE",
@@ -443,16 +393,16 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}:9999/company/ckwv0hj7z1076h7p8sqbaz2za/app/cky1s1k320002q0p80u492pf5",
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc/app/cl9n47hdv00007cuj9nw8dmnz",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"port": "9999",
 					"path": [
 						"company",
-						"ckwv0hj7z1076h7p8sqbaz2za",
+						"cl9n3t0f30002qquj4m2yf2yc",
 						"app",
-						"cky1s1k320002q0p80u492pf5"
+						"cl9n47hdv00007cuj9nw8dmnz"
 					]
 				}
 			},
@@ -484,6 +434,56 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "DELETE company - Ok",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/cl9n3t0f30002qquj4m2yf2yc",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"cl9n3t0f30002qquj4m2yf2yc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE company - Fail - company not exist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{API_KEY}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}:9999/company/cl9mwbyez00005cdduu9f8q6n6asd",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "9999",
+					"path": [
+						"company",
+						"cl9mwbyez00005cdduu9f8q6n6asd"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -510,13 +510,13 @@
 	],
 	"variable": [
 		{
-			"id": "7afc35c9-62fc-483c-bd67-811f14df3d97",
+			"id": "2fd98a23-83dc-486d-92fb-fc1527c3e14f",
 			"key": "BASE_URL",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "7cb1bf2b-f7ec-443f-bfa6-79ec80d60c09",
+			"id": "d0bef207-e21e-4a91-a81b-7cbc8954bf8b",
 			"key": "API_KEY",
 			"value": "",
 			"type": "string"
